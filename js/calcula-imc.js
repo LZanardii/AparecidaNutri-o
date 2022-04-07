@@ -1,4 +1,4 @@
-//alterando IMC
+//js direcionado a calcular o imc de pacientes recém inseridos e de pacientes que já estão na lista
 function processaImc(paciente){
     var peso = getPeso(paciente);
     var altura = getAltura(paciente);
@@ -27,14 +27,6 @@ function processaImc(paciente){
     }
 }
 
-function getAltura(paciente){
-    return paciente.querySelector(".info-altura").textContent;
-} 
-
-function getPeso(paciente){
-    return paciente.querySelector(".info-peso").textContent;
-}
-
 function validaPeso(peso){
     if (peso <= 0 || peso >= 500){
         return false
@@ -51,12 +43,21 @@ function validaAltura(altura){
     }
 }
 
-//rotina para calcular imc dos pacientes quando recarrega o site
-const pacientes = document.querySelectorAll(".paciente");
+function getPeso(paciente){
+    return paciente.querySelector(".info-peso").textContent;
+}
+
+function getAltura(paciente){
+    return paciente.querySelector(".info-altura").textContent;
+} 
+
+const pacientes = document.querySelectorAll(".paciente"); 
+
 
 for (i = 0; i < pacientes.length; i++){
     processaImc(pacientes[i])
 }
+
 
 
 

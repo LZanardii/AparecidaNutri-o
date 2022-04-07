@@ -1,4 +1,4 @@
-//adicionando paciente
+//js direcionado a adicionar pacientes com validação de campo no form
 const botaoAdicionar = document.querySelector("#adicionar-paciente");
 
 botaoAdicionar.addEventListener("click", (event) => {
@@ -49,15 +49,31 @@ const montaTd = (dado, classe) => {
 
 const validaDadosForm = (paciente) => {
     
-    if(paciente.nome.length == 0){
+    if(!validaNome(paciente.nome)){
         return "NOME";
     }else if (!validaPeso(paciente.peso) || paciente.peso.length == 0){
         return "PESO";
     }else if (!validaAltura(paciente.altura) || paciente.altura.length == 0){
         return "ALTURA";
-    }else if(paciente.gordura.length == 0){
+    }else if(!validaGordura(paciente.gordura)){
         return "GORDURA CORPORAL"
     }else{
         return true;
+    }
+}
+
+function validaNome(nome){
+    if (nome.length == 0){
+        return false
+    }else{
+        return true
+    }
+}
+
+function validaGordura(gordura){
+    if (gordura.length == 0){
+        return false
+    }else{
+        return true
     }
 }
