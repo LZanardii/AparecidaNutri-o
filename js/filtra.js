@@ -1,20 +1,19 @@
-var campoFiltro = document.querySelector("#filtrar-tabela")
+var campoFiltro = document.querySelector("#filtrar-tabela");
 
 campoFiltro.addEventListener("input", function() {
     var pacientes = document.querySelectorAll(".paciente");
 
     if (this.value.length > 0) {
-        for (i = 0; i < pacientes.length; i++) {
+        for (var i = 0; i < pacientes.length; i++) {
             var paciente = pacientes[i];
             var tdNome = paciente.querySelector(".info-nome");
             var nome = tdNome.textContent;
             var expressao = new RegExp(this.value, "i");
 
-            // Adição aqui
-            if (expressao.test(nome)) {
-                paciente.classList.remove("invisivel");
-            } else {
+            if (!expressao.test(nome)) {
                 paciente.classList.add("invisivel");
+            } else {
+                paciente.classList.remove("invisivel");
             }
         }
     } else {

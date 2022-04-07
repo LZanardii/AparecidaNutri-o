@@ -125,10 +125,6 @@ button[disabled=disabled], button:disabled {
 
 }
 
-.paciente-invalido{
-	background-color: lightcoral;
-}
-
 .adicionar-paciente{
     margin-top: 30px;
 }
@@ -137,15 +133,25 @@ button[disabled=disabled], button:disabled {
 	border: 1px solid red;
 }
 
-#filtrar-tabela{
-	display: flex;
-	border: 1px solid #000000;
-	display: inline;
-	width: 288px;
-	margin-bottom: 10px;
-	
+.paciente-invalido {
+	background-color: lightcoral;
 }
 
-.invisivel{
+#mensagens-erro {
+	color: red;
+}
+
+.fadeOut {
+	opacity: 0;
+	transition: 0.5s;
+}
+
+#filtrar-tabela {
+	width: 200px;
+	height: 35px;
+	margin-bottom: 10px;
+}
+
+.invisivel {
 	display: none;
 }
